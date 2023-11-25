@@ -1,50 +1,30 @@
 #include <stdio.h>
-main()
-{
-    int i,j;
-    int A[3][4], B[3][4];
-    // Element A
-    printf("Enter element for A matrix.\n");
-    // A matrix input
-    for (i=0; i<3; i++)
-    {
-        for (j=0; j<4; j++)
-        {
-            printf ("A[%d][%d] = ", i, j);
-            scanf ("%d", & A[i][j]);
+
+#define ROWS 3
+#define COLS 3
+
+int main() {
+    int matrix[ROWS][COLS];
+    int i, j;
+
+    printf("Enter elements for a %dx%d matrix:\n", ROWS, COLS);
+
+    // Input values for the matrix
+    for (i = 0; i < ROWS; i++) {
+        for (j = 0; j < COLS; j++) {
+            printf("Enter element at position [%d][%d]: ", i, j);
+            scanf("%d", &matrix[i][j]);
         }
-        printf ("\n");
     }
-    // A matrix output
-    printf ("A = ");
-    for (i=0; i<3; i++)
-    {
-        for (j=0; j<4; j++)
-        {
-            printf ("%d", & A[i][j]);
+
+    // Display the matrix
+    printf("\nThe matrix you entered is:\n");
+    for (i = 0; i < ROWS; i++) {
+        for (j = 0; j < COLS; j++) {
+            printf("%d\t", matrix[i][j]);
         }
-        printf ("\n");
+        printf("\n");
     }
-    // Element B
-    printf("Enter element for B matrix.\n");
-    // B matrix input
-    for (i=0; i<3; i++)
-    {
-        for (j=0; j<4; j++)
-        {
-            printf ("B[%d][%d] = ", i, j);
-            scanf ("%d", & B[i][j]);
-        }
-        printf ("\n");
-    }
-    // B matrix output
-    printf ("B = ");
-    for (i=0; i<3; i++)
-    {
-        for (j=0; j<4; j++)
-        {
-            printf ("%d", & B[i][j]);
-        }
-        printf ("\n");
-    }
+
+    return 0;
 }
